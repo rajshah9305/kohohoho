@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Statement - May 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .statement-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #6C5CE7;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .bank-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6C5CE7;
+        }
+        .account-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .account-info h3 {
+            margin: 0 0 10px 0;
+            color: #6C5CE7;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+        .statement-period {
+            text-align: center;
+            background: #6C5CE7;
+            color: white;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .transactions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .transactions-table th {
+            background: #6C5CE7;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        .transactions-table td {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+        }
+        .transactions-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .credit {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .debit {
+            color: #dc3545;
+        }
+        .balance {
+            text-align: right;
+            font-weight: bold;
+        }
+        .summary {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+        .total-income {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 12px;
+            color: #666;
+        }
+        .edit-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #856404;
+        }
+        @media print {
+            body { background: white; }
+            .edit-note { display: none; }
+            .statement-container { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="statement-container">
+        <div class="edit-note">
+            <strong>📝 Note:</strong> Replace [YOUR FULL NAME], [YOUR ADDRESS], and [YOUR PHONE] with your actual information before using.
+        </div>
+
+        <div class="header">
+            <div class="bank-logo">KOHO</div>
+            <div>
+                <div style="text-align: right; font-size: 14px;">
+                    Statement Date: June 2, 2025<br>
+                    Page 1 of 1
+                </div>
+            </div>
+        </div>
+
+        <div class="account-info">
+            <h3>Account Holder Information</h3>
+            <div class="info-row">
+                <span><strong>Name:</strong> [YOUR FULL NAME]</span>
+                <span><strong>Account Number:</strong> ****-****-1234</span>
+            </div>
+            <div class="info-row">
+                <span><strong>Address:</strong> [YOUR ADDRESS]</span>
+                <span><strong>Account Type:</strong> Spending Account</span>
+            </div>
+            <div class="info-row">
+                <span><strong>Phone:</strong> [YOUR PHONE]</span>
+                <span><strong>Institution Number:</strong> 839</span>
+            </div>
+        </div>
+
+        <div class="statement-period">
+            <h2>Statement Period: May 1, 2025 - May 31, 2025</h2>
+        </div>
+
+        <table class="transactions-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Reference</th>
+                    <th>Debit</th>
+                    <th>Credit</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>05/01/2025</td>
+                    <td>Opening Balance</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td class="balance">$1,857.58</td>
+                </tr>
+                
+                <!-- May Income - $2750 total (higher month) -->
+                <tr>
+                    <td>05/01/2025</td>
+                    <td>Monthly Rent Payment</td>
+                    <td>ET012</td>
+                    <td class="debit">$850.00</td>
+                    <td>-</td>
+                    <td class="balance">$1,007.58</td>
+                </tr>
+                <tr>
+                    <td>05/03/2025</td>
+                    <td>E-Transfer - E-commerce Site Build</td>
+                    <td>ET013</td>
+                    <td>-</td>
+                    <td class="credit">$725.00</td>
+                    <td class="balance">$1,732.58</td>
+                </tr>
+                <tr>
+                    <td>05/04/2025</td>
+                    <td>Starbucks</td>
+                    <td>DB013</td>
+                    <td class="debit">$7.25</td>
+                    <td>-</td>
+                    <td class="balance">$1,725.33</td>
+                </tr>
+                <tr>
+                    <td>05/06/2025</td>
+                    <td>Loblaws</td>
+                    <td>DB014</td>
+                    <td class="debit">$96.42</td>
+                    <td>-</td>
+                    <td class="balance">$1,628.91</td>
+                </tr>
+                <tr>
+                    <td>05/08/2025</td>
+                    <td>Shell Gas Station</td>
+                    <td>DB015</td>
+                    <td class="debit">$61.78</td>
+                    <td>-</td>
+                    <td class="balance">$1,567.13</td>
+                </tr>
+                <tr>
+                    <td>05/10/2025</td>
+                    <td>E-Transfer - Brand Identity Package</td>
+                    <td>ET014</td>
+                    <td>-</td>
+                    <td class="credit">$650.00</td>
+                    <td class="balance">$2,217.13</td>
+                </tr>
+                <tr>
+                    <td>05/12/2025</td>
+                    <td>Tim Hortons</td>
+                    <td>DB016</td>
+                    <td class="debit">$9.15</td>
+                    <td>-</td>
+                    <td class="balance">$2,207.98</td>
+                </tr>
+                <tr>
+                    <td>05/14/2025</td>
+                    <td>Netflix Subscription</td>
+                    <td>AUTO</td>
+                    <td class="debit">$14.99</td>
+                    <td>-</td>
+                    <td class="balance">$2,192.99</td>
+                </tr>
+                <tr>
+                    <td>05/15/2025</td>
+                    <td>Canadian Tire</td>
+                    <td>DB017</td>
+                    <td class="debit">$78.93</td>
+                    <td>-</td>
+                    <td class="balance">$2,114.06</td>
+                </tr>
+                <tr>
+                    <td>05/17/2025</td>
+                    <td>E-Transfer - Mobile App UI Design</td>
+                    <td>ET015</td>
+                    <td>-</td>
+                    <td class="credit">$875.00</td>
+                    <td class="balance">$2,989.06</td>
+                </tr>
+                <tr>
+                    <td>05/18/2025</td>
+                    <td>Boston Pizza</td>
+                    <td>DB018</td>
+                    <td class="debit">$32.67</td>
+                    <td>-</td>
+                    <td class="balance">$2,956.39</td>
+                </tr>
+                <tr>
+                    <td>05/20/2025</td>
+                    <td>Bell Canada - Mobile</td>
+                    <td>AUTO</td>
+                    <td class="debit">$75.00</td>
+                    <td>-</td>
+                    <td class="balance">$2,881.39</td>
+                </tr>
+                <tr>
+                    <td>05/22/2025</td>
+                    <td>Costco Wholesale</td>
+                    <td>DB019</td>
+                    <td class="debit">$142.55</td>
+                    <td>-</td>
+                    <td class="balance">$2,738.84</td>
+                </tr>
+                <tr>
+                    <td>05/24/2025</td>
+                    <td>E-Transfer - Recurring Client Retainer</td>
+                    <td>ET016</td>
+                    <td>-</td>
+                    <td class="credit">$500.00</td>
+                    <td class="balance">$3,238.84</td>
+                </tr>
+                <tr>
+                    <td>05/25/2025</td>
+                    <td>Adobe Creative Cloud</td>
+                    <td>AUTO</td>
+                    <td class="debit">$22.99</td>
+                    <td>-</td>
+                    <td class="balance">$3,215.85</td>
+                </tr>
+                <tr>
+                    <td>05/26/2025</td>
+                    <td>Spotify Premium</td>
+                    <td>AUTO</td>
+                    <td class="debit">$11.99</td>
+                    <td>-</td>
+                    <td class="balance">$3,203.86</td>
+                </tr>
+                <tr>
+                    <td>05/27/2025</td>
+                    <td>McDonald's</td>
+                    <td>DB020</td>
+                    <td class="debit">$14.25</td>
+                    <td>-</td>
+                    <td class="balance">$3,189.61</td>
+                </tr>
+                <tr>
+                    <td>05/28/2025</td>
+                    <td>Canva Pro Subscription</td>
+                    <td>AUTO</td>
+                    <td class="debit">$16.99</td>
+                    <td>-</td>
+                    <td class="balance">$3,172.62</td>
+                </tr>
+                <tr>
+                    <td>05/29/2025</td>
+                    <td>Uber Eats</td>
+                    <td>DB021</td>
+                    <td class="debit">$26.85</td>
+                    <td>-</td>
+                    <td class="balance">$3,145.77</td>
+                </tr>
+                <tr>
+                    <td>05/30/2025</td>
+                    <td>ATM Withdrawal</td>
+                    <td>ATM</td>
+                    <td class="debit">$60.00</td>
+                    <td>-</td>
+                    <td class="balance">$3,085.77</td>
+                </tr>
+                <tr>
+                    <td>05/31/2025</td>
+                    <td>Shoppers Drug Mart</td>
+                    <td>DB022</td>
+                    <td class="debit">$34.18</td>
+                    <td>-</td>
+                    <td class="balance">$3,051.59</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary">
+            <h3>May 2025 Summary</h3>
+            <div class="summary-row">
+                <span><strong>Total Income:</strong></span>
+                <span class="credit">$2,750.00</span>
+            </div>
+            <div class="summary-row">
+                <span><strong>Total Expenses:</strong></span>
+                <span class="debit">$1,555.99</span>
+            </div>
+            <div class="summary-row">
+                <span><strong>Net Income:</strong></span>
+                <span class="credit">$1,194.01</span>
+            </div>
+            <div class="summary-row">
+                <span><strong>Beginning Balance:</strong></span>
+                <span>$1,857.58</span>
+            </div>
+            <div class="summary-row">
+                <span><strong>Ending Balance:</strong></span>
+                <span class="balance">$3,051.59</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Important Notice:</strong> This statement reflects all transactions for the specified period. Please review all entries carefully and report any discrepancies within 30 days.</p>
+            <p>Customer Support: 1-855-564-6462 | KOHO App: Available on iOS & Android | Web: koho.ca</p>
+            <p>KOHO Financial Inc. | Member of Canada Deposit Insurance Corporation (CDIC)</p>
+        </div>
+    </div>
+
+    <script>
+        console.log("May 2025 Bank Statement loaded. Use Ctrl+P to print.");
+    </script>
+</body>
+</html>
